@@ -7,13 +7,13 @@ let array2 = [1, 2, 3, 4, 5, 6];
 let testString = 'liMeSHArp DeveLoper TEST';
 let anotherString = 'In the SEARCH OF INcreDIBle';
 
-/* function repeatItems(items, iterationCount = 3) {
+function repeatItems(items, iterationCount = 3) {
   if (!Array.isArray(items)) {
     throw new Error('Please provide an array!');
   }
   items = items.flat();
   return Array(iterationCount).fill(items).flat();
-} */
+}
 
 /* function repeatItems(items, iterationCount = 3) {
   if (!Array.isArray(items)) {
@@ -30,13 +30,14 @@ let anotherString = 'In the SEARCH OF INcreDIBle';
 
 function removeAndCapitalizeWord(word) {
   if (typeof word !== 'string') throw new Error('Please enter valid string');
-  word = word.replace(/[aeiou]/gi, '').toLowerCase();
+  let pattern = /[aeiou]/gi;
+  word = word.replace(pattern, '').toLowerCase();
   word = word.charAt(0).toUpperCase() + word.slice(1);
   return word;
 }
 
-// console.log(repeatItems(array1));
-// console.log(repeatItems(array2));
+console.log(repeatItems(array1));
+console.log(repeatItems(array2));
 
 console.log(removeAndCapitalizeWord(testString));
 console.log(removeAndCapitalizeWord(anotherString));
